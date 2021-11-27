@@ -65,6 +65,9 @@
                         <th>
                             Unit Price
                         </th>
+                        <th>
+                            Item Cost
+                        </th>
 
                         <th>Action</th>
                     </tr>
@@ -82,6 +85,9 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.UnitPrice)
                             </td>
+                            <td>
+                                @(string.Format("{0:0.000}", Math.Truncate(item.Qty *item.UnitPrice * 10) /10)) INR
+                            </td>
 
                             <td class="btn-group">
                                 @Html.ActionLink("Delete", "DeleteConfirm", new { id = item.PurTemID }, new { @class = "btn btn-danger" })
@@ -89,7 +95,23 @@
                         </tr>
                         }
                 </tbody>
+                <tfoot>
+                    <tr>
+                       <td></td>
+                        <td></td>
+                        <td style="background-color:crimson; color:black;"><strong>Total</strong></td>
+                        <td style="background-color:crimson; color:cyan;">
+                            @(string.Format("{0:0.000}", Math.Truncate(ViewBag.TotalAmount * 10) / 10)) INR
+                        </td>
+                        <td></td>
+                    </tr>
+                </tfoot>
             </table>
+            <div style="margin-top:20px;float:right">
+                @Html.ActionLink("Next", "SelectSupplier", null,new { @class = "btn btn-success", style = "padding:20px;" })
+                @Html.ActionLink("Cancel","CancelPurchase",null,new { @class = "btn btn-danger", style = "padding:20px" })
+
+            </div>
         </div>
     </div>
 </div>

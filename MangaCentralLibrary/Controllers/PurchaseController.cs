@@ -18,8 +18,13 @@ namespace MangaCentralLibrary.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-
+            double totalamount = 0;
             var temppur = db.PurTemDetailsTables.ToList();
+            foreach(var item in temppur)
+            {
+                totalamount += (item.Qty * item.UnitPrice);
+            }
+            ViewBag.TotalAmount = totalamount;
             return View(temppur);
 
         }
