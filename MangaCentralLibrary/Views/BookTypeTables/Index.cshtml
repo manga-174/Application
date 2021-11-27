@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DatabaseLayer.BookTypeTable>
+
+@{
+    ViewBag.Title = "Books Category";
+}
+
+
+
+<p>
+    @Html.ActionLink("Add Book Category", "Create",null,new { @class= "btn btn-outline-primary" })
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            Book Type
+        </th>
+        <th>
+            User
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookTypeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookTypeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookTypeID })
+        </td>
+    </tr>
+}
+
+</table>

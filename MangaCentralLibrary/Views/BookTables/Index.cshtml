@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DatabaseLayer.BookTable>
+
+@{
+    ViewBag.Title = "Books";
+}
+
+
+
+<p>
+    @Html.ActionLink("Add Books", "Create",null,new {@class="btn btn-outline-primary" })
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+           Book Title
+        </th>
+        <th>
+            Short Description
+        </th>
+        
+        <th>
+            Book Name
+        </th>
+        <th>
+            Edition
+        </th>
+        <th>
+            Book Type
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+            User
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShortDescription)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edition)
+        </td>
+                
+        <td>
+            @Html.DisplayFor(modelItem => item.BookTypeTable.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentTable.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserTable.UserName)
+        </td>
+        <td class="btn-group">
+            @Html.ActionLink("Update", "Edit", new { id=item.BookID },new { @class="btn btn-primary"})
+            @Html.ActionLink("Details", "Details", new { id=item.BookID }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
