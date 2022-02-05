@@ -27,18 +27,40 @@ namespace DatabaseLayer
         }
     
         public int BookID { get; set; }
-        public int UserID { get; set; }
+        public int UserID { get; set; } 
+        [Required(ErrorMessage ="Please enter Department !")]
         public int DepartmentID { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
         public int BookTypeID { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
+
         public string BookTitle { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
+
+        [DataType(DataType.MultilineText)]
         public string ShortDescription { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
+
         public string Author { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
+
         public string BookName { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
+        
         public double Edition { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
         public int TotalCopies { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
+
         [DataType(DataType.Date)]
         public System.DateTime RegDate { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
+
+        [DataType(DataType.Currency)]
         public double Price { get; set; }
+        [Required(ErrorMessage = "Please enter Department !")]
+
+        [DataType(DataType.MultilineText)]
         public string Description { get; set; }
     
         public virtual BookFineTable BookFineTable { get; set; }

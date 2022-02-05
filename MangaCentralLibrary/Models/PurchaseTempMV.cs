@@ -9,9 +9,9 @@ namespace MangaCentralLibrary.Models
     public class PurchaseTempMV
     {
         public int PurTemID { get; set; }
-        
+       
         public int BookID { get; set; }
-        
+       
         public int Qty { get; set; }
         public double UnitPrice { get; set; }
     }

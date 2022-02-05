@@ -36,7 +36,7 @@ namespace MangaCentralLibrary.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
+            //int userid = Convert.ToInt32(Convert.ToString(Session["UserID"]));
             var find = db.PurTemDetailsTables.Where(i => i.BookID == BID).FirstOrDefault();
             if (find == null)
             {

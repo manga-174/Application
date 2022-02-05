@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DatabaseLayer.BookTable>
 
 @{
-    ViewBag.Title = "Books";
+    ViewBag.Title = "All Books";
 }
 
 
@@ -17,13 +17,14 @@
         <th>
             Short Description
         </th>
-        
+              
         <th>
             Book Name
         </th>
         <th>
             Edition
         </th>
+        
         <th>
             Book Type
         </th>
@@ -33,7 +34,7 @@
         <th>
             User
         </th>
-        <th>Actions</th>
+        <th>Action</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -44,6 +45,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.ShortDescription)
         </td>
+
        
         <td>
             @Html.DisplayFor(modelItem => item.BookName)

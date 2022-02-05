@@ -91,6 +91,11 @@ namespace MangaCentralLibrary.Controllers
         // GET: BookTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserID"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            
             if (id == null)
             {
                 if (string.IsNullOrEmpty(Convert.ToString(Session["UserID"])))
@@ -139,7 +144,13 @@ namespace MangaCentralLibrary.Controllers
 
         // GET: BookTables/Delete/5
         public ActionResult Delete(int? id)
+
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserID"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            
             if (string.IsNullOrEmpty(Convert.ToString(Session["UserID"])))
             {
                 return RedirectToAction("Login", "Home");

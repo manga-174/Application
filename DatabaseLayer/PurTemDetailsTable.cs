@@ -16,12 +16,11 @@ namespace DatabaseLayer
     public partial class PurTemDetailsTable
     {
         public int PurTemID { get; set; }
-        [Required(ErrorMessage="Select Book")]
+        [Required(ErrorMessage="Please select book!")]
         public int BookID { get; set; }
-        [Required(ErrorMessage = "Enter Purchase Qty")]
-
+        [Required(ErrorMessage = "Please enter qty!")]
         public int Qty { get; set; }
-        [Required(ErrorMessage = "Enter Purchase Unit Price")]
+        [Required(ErrorMessage = "Please enter unit price!")]
 
         public double UnitPrice { get; set; }
     
